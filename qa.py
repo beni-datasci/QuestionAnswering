@@ -5,7 +5,7 @@ import streamlit as st
 def load_qa_model():
     model = pipeline("question-answering")
     return model
-
+st.title("The Question Answering-Machine")
 with st.expander("Our Team & Mission"):
   st.write("Hello! Our team consists of Frenki Pushaj, Benjamin Rattanpal & Patrik Spindler.")
   st.write("Our mission consists of creating an app that answers all your questions regarding celebrities.")
@@ -25,11 +25,12 @@ with st.expander("When did Beyonce release Dangerously in Love?"):
   st.write("ID: 56d43c5f2ccc5a1400d830ac")
     
 qa = load_qa_model()
-st.title("Ask Questions about your Text")
-sentence = st.text_area('Please paste your text :', height=30)
-question = st.text_input("Your Questions regarding the text?")
-button = st.button("Get me Answers")
-with st.spinner("Discovering Answers.."):
-    if button and sentence:
-        answers = qa(question=question, context=sentence)
-        st.write(answers['answer'])
+with st.expander("Create your own Questions"):
+    st.title("Ask Questions about your Text")
+    sentence = st.text_area('Please paste your text :', height=30)
+    question = st.text_input("Your Questions regarding the text?")
+    button = st.button("Get me Answers")
+    with st.spinner("Discovering Answers.."):
+        if button and sentence:
+            answers = qa(question=question, context=sentence)
+            st.write(answers['answer'])
