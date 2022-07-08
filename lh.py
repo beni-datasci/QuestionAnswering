@@ -1,5 +1,5 @@
-import streamlit as st
 from transformers import pipeline
+import streamlit as st
 
 @st.cache(allow_output_mutation=True)
 def load_qa_model():
