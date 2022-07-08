@@ -31,7 +31,7 @@ st.write("Create your own questions")
 with st.expander("Curious?"):
     st.title("Ask Questions about your Text")
     sentence = st.text_area('Please paste your text :', height=30)
-    question = st.text_input("Your Questions regarding the text?")
+    question = st.text_input("Your Question regarding the text?")
     button = st.button("Get me Answers")
     with st.spinner("Discovering Answers.."):
         if button and sentence:
