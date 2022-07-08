@@ -6,9 +6,11 @@ def load_qa_model():
     model = pipeline("question-answering")
     return model
 st.title("The Question Answering-Machine")
+st.write(" ")
+st.write("Our beginnings")
 with st.expander("Our Team & Mission"):
-  st.write("Hello! Our team consists of Frenki Pushaj, Benjamin Rattanpal & Patrik Spindler.")
-  st.write("Our mission consists of creating an app that answers all your questions regarding celebrities.")
+  st.write("Hello! Our team consists of Frenki Pushaj & Benjamin Rattanpal.")
+  st.write("Our mission consists of creating an app that answers all your questions regarding celebrities & even more.")
   st.write("We strive to achieve this by utilizing Machine Learning :)")
   
 with st.expander("Which Dataset do we use?"):
@@ -25,7 +27,8 @@ with st.expander("When did Beyonce release Dangerously in Love?"):
   st.write("ID: 56d43c5f2ccc5a1400d830ac")
     
 qa = load_qa_model()
-with st.expander("Create your own Questions"):
+st.write("Create your own questions")
+with st.expander("Curious?"):
     st.title("Ask Questions about your Text")
     sentence = st.text_area('Please paste your text :', height=30)
     question = st.text_input("Your Questions regarding the text?")
